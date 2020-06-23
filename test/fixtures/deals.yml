@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyString
+  code: MyString
+  begin_date: MyString
+  expiration_date: MyString
+  posted_on: MyString
+  user: one
+  business: one
+
+two:
+  title: MyString
+  content: MyString
+  code: MyString
+  begin_date: MyString
+  expiration_date: MyString
+  posted_on: MyString
+  user: two
+  business: two
