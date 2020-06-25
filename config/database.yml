@@ -21,7 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: trinyx-app
-  password: <%= ENV['APP_DB_PASSWORD'] %>
+  password: <%= ENV['TRINYX_APP_DB_PASSWORD'] %>
 
 development:
   <<: *default
@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: trinyx_app_backend_production
-  username: trinyx_app_backend
-  password: <%= ENV['TRINYX_APP_BACKEND_DATABASE_PASSWORD'] %>
+  username: trinyx-app
+  password: <%= ENV['TRINYX_APP_DB_PASSWORD'] %>
