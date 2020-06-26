@@ -1,4 +1,7 @@
 class Api::V1::CommentsController < ApplicationController
+
+    skip_before_action :authorized, only: [:index, :create, :update, :show]
+
     def index
         @comments = Comment.all
         render json: @comments 

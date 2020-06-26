@@ -1,5 +1,7 @@
 class Api::V1::DealsController < ApplicationController
     
+    skip_before_action :authorized, only: [:index, :create, :update, :show]
+
     def index
         @deals = Deal.all
         render json: @deals
