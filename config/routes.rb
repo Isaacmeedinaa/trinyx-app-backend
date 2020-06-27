@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :users
       resources :businesses
       resources :deals
+      resources :hottest_deals
       resources :likes
       resources :comments
     end
