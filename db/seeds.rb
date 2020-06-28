@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users =>
-isaac = User.create(first_name: 'Isaac', last_name: 'Medina', age: 18, username: 'isaac.meedinaa', email: 'isaac.meedinaa@gmail.com', phone_number: '7732348889', location: 'Chicago, IL 60623', password: '123456')
-josue = User.create(first_name: 'Josue', last_name: 'Viramontes', age: 22, username: 'thebboy', email: 'josueviramontes1997@gmail.com', phone_number: '7737379195', location: 'Chicago, IL 60623', password: '123456')
+isaac = User.create(first_name: 'Isaac', last_name: 'Medina', image: Faker::Company.logo, age: 18, username: 'isaac.meedinaa', email: 'isaac.meedinaa@gmail.com', phone_number: '7732348889', location: 'Chicago, IL 60623', password: '123456')
+josue = User.create(first_name: 'Josue', last_name: 'Viramontes', image: Faker::Company.logo, age: 22, username: 'thebboy', email: 'josueviramontes1997@gmail.com', phone_number: '7737379195', location: 'Chicago, IL 60623', password: '123456')
 
 # Businesses =>
-business_one = Business.create(name: Faker::Company.name, business_industry: Faker::Company.industry, email: 'business_one@gmail.com', phone_number: '18005403203', location: 'Chicago, IL 60623', password: '123456')
-business_two = Business.create(name: Faker::Company.name, business_industry: Faker::Company.industry, email: 'business_two@gmail.com', phone_number: '18008590190', location: 'Cicero, IL 60804', password: '123456')
+business_one = Business.create(name: Faker::Company.name, image: Faker::Company.logo, business_industry: Faker::Company.industry, email: 'business_one@gmail.com', phone_number: '18005403203', location: 'Chicago, IL 60623', password: '123456')
+business_two = Business.create(name: Faker::Company.name, image: Faker::Company.logo, business_industry: Faker::Company.industry, email: 'business_two@gmail.com', phone_number: '18008590190', location: 'Cicero, IL 60804', password: '123456')
 
 # Deals => 
-deal_one = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1, user_id: 1)
-deal_two = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 2, user_id: 2)
-deal_three = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1, user_id: 1)
-deal_four = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 2, user_id: 2)
-deal_five = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1, user_id: 1)
+deal_one = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1)
+deal_two = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 2)
+deal_three = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1)
+deal_four = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 2)
+deal_five = Deal.create(title: Faker::Book.title, content: Faker::Quote.famous_last_words, code: Faker::Code.nric, image: Faker::Company.logo, begin_date: '06-23-2020', expiration_date: '07-23-2020', business_id: 1)
 
 # Comments => 
 20.times do

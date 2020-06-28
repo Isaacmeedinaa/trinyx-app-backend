@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :business_industry, :email, :phone_number, :location, :deal_count, :like_count
+  attributes :id, :name, :image, :business_industry, :email, :phone_number, :location, :member_since, :deal_count, :like_count
   has_many :deals
   has_many :likes
 
@@ -9,5 +9,9 @@ class BusinessSerializer < ActiveModel::Serializer
 
   def like_count
     @object.likes.count
+  end
+
+  def member_since
+    @object.created_at.strftime("%m-%d-%Y")
   end
 end

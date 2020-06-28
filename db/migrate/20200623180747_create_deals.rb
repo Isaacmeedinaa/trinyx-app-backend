@@ -8,7 +8,6 @@ class CreateDeals < ActiveRecord::Migration[6.0]
       t.string :begin_date
       t.string :expiration_date
       t.references :business, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
