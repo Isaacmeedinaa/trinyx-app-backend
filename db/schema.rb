@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_181542) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.string "business_industry"
     t.string "email"
     t.string "phone_number"
@@ -44,11 +45,9 @@ ActiveRecord::Schema.define(version: 2020_06_23_181542) do
     t.string "begin_date"
     t.string "expiration_date"
     t.bigint "business_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["business_id"], name: "index_deals_on_business_id"
-    t.index ["user_id"], name: "index_deals_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_181542) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "image"
     t.string "username"
     t.integer "age"
     t.string "email"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 2020_06_23_181542) do
   add_foreign_key "comments", "deals"
   add_foreign_key "comments", "users"
   add_foreign_key "deals", "businesses"
-  add_foreign_key "deals", "users"
   add_foreign_key "likes", "businesses"
   add_foreign_key "likes", "deals"
   add_foreign_key "likes", "users"

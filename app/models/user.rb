@@ -3,9 +3,9 @@ class User < ApplicationRecord
     has_secure_password
 
     # db associations
-    has_many :comments
-    has_many :likes
-    has_many :deals, through: :likes
+    has_many :comments, dependent: :destroy
+    has_many :likes, dependent: :destroy
+    has_many :deals, through: :likes, dependent: :destroy
 
     # validations
     validates :username, presence: true, uniqueness: true

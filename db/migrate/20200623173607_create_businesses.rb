@@ -2,6 +2,7 @@ class CreateBusinesses < ActiveRecord::Migration[6.0]
   def change
     create_table :businesses do |t|
       t.string :name
+      t.string :image
       t.string :business_industry
       t.string :email
       t.string :phone_number
