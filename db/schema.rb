@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_06_23_181542) do
     t.string "email"
     t.string "phone_number"
     t.string "location"
+    t.string "lat"
+    t.string "lng"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

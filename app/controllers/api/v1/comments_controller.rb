@@ -1,6 +1,6 @@
 class Api::V1::CommentsController < ApplicationController
 
-    skip_before_action :authorized, only: [:index, :create, :update, :show]
+    skip_before_action :authorized, only: [:index, :create, :update, :show, :destroy]
 
     def index
         @comments = Comment.all
@@ -8,6 +8,13 @@ class Api::V1::CommentsController < ApplicationController
     end
 
     def create
+        @comment = Comment.create(comment_params)
+
+        if @comment.valid?
+            render json: { status: 200, comment: CommentSerializer.new(@comment) }
+        else
+            render json: { status: 401, message: @comment.errors.full_messages }
+        end
     end
 
     def update
@@ -18,9 +25,20 @@ class Api::V1::CommentsController < ApplicationController
         render json: @comment
     end
 
+    def destroy
+        @comment = Comment.find_by(id: params[:id])
+
+        if @comment
+            @comment.destroy
+            render json: { status: 200 }
+        else
+            render json: { status: 401, message: @comment.errors.full_messages }
+        end
+    end
+
     private
 
     def comment_params
-        params.require(:comment).require(:content, :user_id, :deal_id)
+        params.require(:comment).permit(:content, :user_id, :deal_id)
     end
 end
