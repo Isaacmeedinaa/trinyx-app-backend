@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :image, :business_industry, :email, :phone_number, :location, :member_since, :deal_count, :like_count
+  attributes :id, :name, :image, :business_industry, :email, :phone_number, :location, :lat, :lng, :member_since, :deal_count, :like_count
   has_many :deals
   has_many :likes
 

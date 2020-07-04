@@ -29,7 +29,7 @@ class Api::V1::BusinessesController < ApplicationController
     private
 
     def business_params
-        params.require(:business).permit(:name, :business_industry, :email, :phone_number, :location, :password, :password_confirmation)
+        params.require(:business).permit(:name, :business_industry, :email, :phone_number, :location, :lat, :lng, :password, :password_confirmation)
     end
 
 end
